@@ -1,0 +1,42 @@
+* My Dotfiles
+
+This is my dotfiles repository managed with GNU Stow.
+
+** Installation
+
+To install the dotfiles (create symlinks to your home directory):
+
+#+begin_src sh
+make
+#+end_src
+
+Or explicitly:
+
+#+begin_src sh
+make stow
+#+end_src
+
+This runs =stow .= which creates symbolic links from your home directory to the files in this repository.
+
+** Cleaning Up
+
+To remove all symlinks created by stow:
+
+#+begin_src sh
+make clean
+#+end_src
+
+This runs =stow -D .= which deletes the symbolic links.
+
+** Available Make Commands
+
+- =make= or =make stow=: Create symbolic links using GNU Stow
+- =make clean=: Remove all symbolic links created by stow
+
+** Prerequisites
+
+Make sure you have GNU Stow installed:
+
+- macOS: =brew install stow=
+- Ubuntu/Debian: =sudo apt install stow=
+- Arch Linux: =sudo pacman -S stow=
