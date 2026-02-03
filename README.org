@@ -28,11 +28,6 @@ make clean
 
 This runs =stow -D .= which deletes the symbolic links.
 
-** Available Make Commands
-
-- =make= or =make stow=: Create symbolic links using GNU Stow
-- =make clean=: Remove all symbolic links created by stow
-
 ** Prerequisites
 
 Make sure you have GNU Stow installed:
