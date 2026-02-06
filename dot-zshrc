@@ -6,9 +6,17 @@ autoload -Uz $ZFUNCDIR/*(.:t)
 if is-macos; then
     # for macos
     source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
-else
+elif [ -f /etc/arch-release ]; then
     # for arch
     source '/usr/share/zsh-antidote/antidote.zsh'
+else
+    # Clone antidote if necessary.
+    if [[ ! -d ${ZDOTDIR:-$HOME}/.antidote ]]; then
+        git clone https://github.com/mattmc3/antidote ${ZDOTDIR:-$HOME}/.antidote
+    fi
+
+    # Create an amazing Zsh config using antidote plugins.
+    source ${ZDOTDIR:-$HOME}/.antidote/antidote.zsh
 fi
 
 antidote load
